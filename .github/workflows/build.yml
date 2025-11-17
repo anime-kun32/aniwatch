@@ -25,11 +25,11 @@ jobs:
           version: 10
           run_install: false
 
-      - name: Double check pnpm install
+      - name: Check pnpm install
         run: pnpm --version
 
-      # Backup install in case pnpm isn't found (uncommon but nice insurance)
-      - name: Install pnpm (just in case)
+      # Install pnpm globally if previous step fails (rare, but happens on some runners)
+      - name: Install pnpm via npm (backup)
         if: ${{ failure() }}
         run: npm install -g pnpm
 
