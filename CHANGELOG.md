@@ -1,4 +1,8 @@
-# 3.0.0 (2025-11-17)
+## [3.0.1](https://github.com/ghoshRitesh12/aniwatch/compare/v3.0.0...v3.0.1) (2025-11-17)
+
+
+
+# [3.0.0](https://github.com/ghoshRitesh12/aniwatch/compare/2496e643ef430955bbb05ad5e547976baf2f4d07...v3.0.0) (2025-11-17)
 
 
 ### Bug Fixes
