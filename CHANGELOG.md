@@ -1,3 +1,7 @@
+## [3.0.7](https://github.com/ghoshRitesh12/aniwatch/compare/v3.0.6...v3.0.7) (2025-11-17)
+
+
+
 ## [3.0.6](https://github.com/ghoshRitesh12/aniwatch/compare/v3.0.5...v3.0.6) (2025-11-17)
 
 
@@ -11,10 +15,6 @@
 
 
 ## [3.0.3](https://github.com/ghoshRitesh12/aniwatch/compare/v3.0.2...v3.0.3) (2025-11-17)
-
-
-
-## [3.0.2](https://github.com/ghoshRitesh12/aniwatch/compare/v3.0.1...v3.0.2) (2025-11-17)
 
 
 
