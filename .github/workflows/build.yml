@@ -3,7 +3,7 @@ name: Build & Commit Dist
 on:
   push:
     branches:
-      - main   # or your default branch
+      - main
 
 jobs:
   build:
@@ -20,7 +20,9 @@ jobs:
           cache: "pnpm"
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: |
+          npm install -g pnpm
+          pnpm --version  # sanity check
 
       - name: Install dependencies
         run: pnpm install
