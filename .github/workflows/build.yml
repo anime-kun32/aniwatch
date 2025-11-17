@@ -21,9 +21,7 @@ jobs:
       - name: Double check pnpm install
         run: pnpm --version
 
-      # OR if pnpm still fails, add this step here:
-      # - name: Install pnpm (emergency)
-      #   run: npm install -g pnpm
+      
 
       - name: Install dependencies
         run: pnpm install
