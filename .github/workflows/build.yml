@@ -1,3 +1,10 @@
+name: Build & Commit Dist
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +28,10 @@ jobs:
       - name: Double check pnpm install
         run: pnpm --version
 
-      
+      # Backup install in case pnpm isn't found (uncommon but nice insurance)
+      - name: Install pnpm (just in case)
+        if: ${{ failure() }}
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
