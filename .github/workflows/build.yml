@@ -13,16 +13,23 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "pnpm"
-
-      - name: Install pnpm
+      - name: Install Node.js & pnpm via apt
         run: |
+          # Update packages
+          sudo apt update -y
+          sudo apt upgrade -y
+
+          # Install Node.js (LTS)
+          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt install -y nodejs build-essential
+
+          # Check Node & npm
+          node -v
+          npm -v
+
+          # Install pnpm globally
           npm install -g pnpm
-          pnpm --version  # sanity check
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install
