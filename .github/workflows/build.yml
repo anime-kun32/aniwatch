@@ -13,23 +13,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install Node.js & pnpm via apt
-        run: |
-          # Update packages
-          sudo apt update -y
-          sudo apt upgrade -y
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
 
-          # Install Node.js (LTS)
-          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-          sudo apt install -y nodejs build-essential
-
-          # Check Node & npm
-          node -v
-          npm -v
-
-          # Install pnpm globally
-          npm install -g pnpm
-          pnpm -v
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10  # or omit to use version in package.json
 
       - name: Install dependencies
         run: pnpm install
@@ -42,5 +35,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add dist
-          git diff --cached --quiet || git commit -m "📦 Auto-build dist"
+          git diff --cached --quiet || git commit -m "📦 Auto‑build dist"
           git push origin main
